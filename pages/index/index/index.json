@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "scroll-row": "/components/scroll-row/scroll-row"
+  }
+}

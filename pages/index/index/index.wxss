@@ -1,0 +1,8 @@
+/* pages/index/index/index.wxss */
+.item-img {
+  width: 200rpx;
+  height: 270rpx;
+}
+.wux-filterbar__bd {
+  background-color: #ffffff !important;
+}

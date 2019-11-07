@@ -1,0 +1,17 @@
+/* components/scroll-row/scroll-row.wxss */
+
+.scroll-row-container {
+  display: flex;
+  white-space: nowrap;
+}
+
+.scroll-item {
+  display: inline-block;
+  padding: 0 10rpx;
+  width: 220rpx;
+}
+
+.scroll-item-img {
+  width: 200rpx;
+  height: 270rpx;
+}

@@ -1,0 +1,43 @@
+<!--pages/index/index/index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isLeft="true">
+  <view slot="backText">顺义</view>
+</cu-custom>
+
+<!-- <scroll-view scroll-y class="padding scrollPage"> -->
+<scroll-row title="精选榜" list="{{fineList}}" />
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 更多演出
+  </view>
+</view>
+<wux-filterbar class="bg-white" items="{{filter}}" bind:change="onChange" bind:open="onOpen" bind:close="onClose" />
+<view class="weui-panel weui-panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
+  <view class="cu-list menu-avatar">
+    <view class="bg-white">
+        <navigator url="/pages/ticket/detail/detail" class="flex align-start" wx:for="{{fineList}}" wx:key="" bindtap="detail" data-tId="{{item.tId}}">
+          <view class="bg-grey margin-xs radius item-img">
+            <image mode="widthFix" src="{{item.cover}}"></image>
+          </view>
+
+          <view class="margin-xs grid col-1" style="width:100%;height: 270rpx;">
+            <view class="text-lg">
+              {{item.title}}
+            </view>
+            <view class="">2019-11-11</view>
+            <view class="">
+              <view class="cf">
+                <view class="fl">
+                  <text class="text-price text-xxl text-red">80.00</text>
+                </view>
+                <view class="fr">
+                  <button class="cu-btn round lines-red">去购票</button>
+                </view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+    </view>
+  </view>
+</view>
+<!-- </scroll-view> -->

@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/ticket/detail/detail",
+    "pages/index/index/index",
+    "pages/home/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "wux-filterbar": "/wux/filterbar/index"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "首页",
+        "iconPath": "static/images/tabbar/com.png",
+        "selectedIconPath": "static/images/tabbar/com.png"
+      },
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "我的",
+        "iconPath": "static/images/tabbar/my.png",
+        "selectedIconPath": "static/images/tabbar/my.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

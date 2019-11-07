@@ -1,0 +1,20 @@
+<!--components/scroll-row/scroll-row.wxml-->
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> {{title}}
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="scroll-item" wx:for="{{list}}" wx:key>
+    <view>
+      <view style="position:relative">
+        <image class="scroll-item-img" mode="aspectFit" src="{{item.cover}}" />
+        <view class="bg-red" style="position:absolute;bottom:7rpx;left:0">Top {{index+1}}</view>
+      </view>
+      <view class="text-cut text-lg">
+        {{item.title}}
+      </view>
+    </view>
+  </view>
+</scroll-view>
