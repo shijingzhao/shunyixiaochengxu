@@ -17,7 +17,7 @@ const apiUrl = apiUrlTable.local;
 function code2sessionId(code) {
   return new Promise((res, rej) => {
     wx.request({
-      url: `${apiUrl}/api/sys/login`,
+      url: `${apiUrl}/user/login`,
       method: 'POST',
       data: {
         code,

@@ -44,7 +44,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getTicketDetail()
+    options.tId = 3
+    this.getTicketDetail(options.tId)
   },
 
   /**
@@ -110,16 +111,18 @@ Page({
     let values = e.currentTarget.dataset.value;
     for (let i = 0, lenI = items.length; i < lenI; ++i) {
       if (items[i].value == values) {
-        items[i].checked = !items[i].checked;
-        break
+        items[i].checked = true
+      }
+      else {
+        items[i].checked = false
       }
     }
     this.setData({
       checkbox: items
     })
   },
-  getTicketDetail() {
-    req.ticket.getFilterDetail()
+  getTicketDetail(tId) {
+    req.ticket.getFilterDetail(tId)
       .then((res) => {
         this.setData({
           info: res.result

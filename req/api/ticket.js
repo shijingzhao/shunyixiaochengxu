@@ -6,8 +6,8 @@ function install(req, request) {
         url
       })
     },
-    getFilterDetail() {
-      const url = `${req.apiUrl}ticket/detail?tId=1`
+    getFilterDetail(r) {
+      const url = `${req.apiUrl}ticket/detail?tId=`+r
       return request({
         url
       })
