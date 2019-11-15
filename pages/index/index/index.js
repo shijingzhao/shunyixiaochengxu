@@ -388,6 +388,6 @@ Page({
   noop() {},
 
   detail: function(event) {
-    console.log(event)
+    console.log(event.currentTarget.dataset)
   }
 })

@@ -44,7 +44,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    options.tId = 3
     this.getTicketDetail(options.tId)
   },
 
@@ -102,6 +101,12 @@ Page({
     })
   },
   hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+  buy(e) {
+    console.log(this.data.checkbox)
     this.setData({
       modalName: null
     })

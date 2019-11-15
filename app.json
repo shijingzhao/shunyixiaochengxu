@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/ticket/detail/detail",
     "pages/index/index/index",
-    "pages/home/index/index"
+    "pages/home/index/index",
+    "pages/ticket/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
