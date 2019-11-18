@@ -3,10 +3,7 @@ const req = require('../utils/mp-req/index.js');
 const ticketApi = require('./api/ticket.js');
 
 const apiUrlTable = {
-  local: 'http://127.0.0.1:9501/',
-  dev: 'http://192.168.1.100:8080',
-  pre: 'https://stg-mp-req.leanapp.cn',
-  release: 'https://mp-req.leanapp.cn',
+  local: 'http://10.1.1.4:9501/'
 };
 const apiUrl = apiUrlTable.local;
 

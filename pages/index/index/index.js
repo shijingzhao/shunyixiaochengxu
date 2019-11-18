@@ -6,229 +6,44 @@ Page({
    * 页面的初始数据
    */
   data: {
+    params: [0,0],
+    maxPage: 1,
+    page: 1,
     fineList: [],
     filter: [{
-        type: 'radio',
-        label: 'Updated',
-        value: 'updated',
-        checked: true,
-        children: [{
-            label: 'Recently updated',
-            value: 'desc',
-            checked: true, // 默认选中
-          },
-          {
-            label: 'Least recently updated',
-            value: 'asc',
-          },
-        ],
-        groups: ['001'],
+      type: 'radio',
+      label: '分类',
+      value: 'tType',
+      checked: true,
+      children: [{
+        label: '全部分类',
+        value: '0',
+        checked: true, // 默认选中
       },
       {
-        type: 'text',
-        label: 'Forks',
-        value: 'forks',
-        groups: ['002'],
+        label: '小提琴',
+        value: '1',
+      },
+      ],
+      groups: ['001'],
+    },
+    {
+      type: 'radio',
+      label: '时间段',
+      value: 'period',
+      checked: true,
+      children: [{
+        label: '全部时间',
+        value: '0',
+        checked: true, // 默认选中
       },
       {
-        type: 'sort',
-        label: 'Stars',
-        value: 'stars',
-        groups: ['003'],
+        label: '一周内',
+        value: '1',
       },
-      {
-        type: 'filter',
-        label: '筛选',
-        value: 'filter',
-        checked: true,
-        children: [{
-            type: 'radio',
-            label: 'Languages（单选）',
-            value: 'language',
-            children: [{
-                label: 'JavaScript',
-                value: 'javascript',
-              },
-              {
-                label: 'HTML',
-                value: 'html',
-              },
-              {
-                label: 'CSS',
-                value: 'css',
-              },
-              {
-                label: 'TypeScript',
-                value: 'typescript',
-              },
-            ],
-          },
-          {
-            type: 'checkbox',
-            label: 'Query（复选）',
-            value: 'query',
-            children: [{
-                label: 'Angular',
-                value: 'angular',
-              },
-              {
-                label: 'Vue',
-                value: 'vue',
-              },
-              {
-                label: 'React',
-                value: 'react',
-                checked: true, // 默认选中
-              },
-              {
-                label: 'Avalon',
-                value: 'avalon',
-              },
-            ],
-          },
-          {
-            type: 'checkbox',
-            label: '配送方式',
-            value: 'away',
-            children: [{
-                label: '京东配送',
-                value: '1',
-              },
-              {
-                label: '货到付款',
-                value: '2',
-              },
-              {
-                label: '仅看有货',
-                value: '3',
-              },
-              {
-                label: '促销',
-                value: '4',
-              },
-              {
-                label: '全球购',
-                value: '5',
-              },
-              {
-                label: 'PLUS专享价',
-                value: '6',
-              },
-              {
-                label: '新品',
-                value: '7',
-              },
-              {
-                label: '配送全球',
-                value: '8',
-              },
-            ],
-          },
-          {
-            type: 'radio',
-            label: '性别',
-            value: 'gander',
-            children: [{
-                label: '男',
-                value: '0',
-              },
-              {
-                label: '女',
-                value: '1',
-              },
-              {
-                label: '通用',
-                value: '2',
-              },
-            ],
-          },
-          {
-            type: 'checkbox',
-            label: '闭合方式',
-            value: 'closed_mode',
-            children: [{
-                label: '卡扣',
-                value: '0',
-              },
-              {
-                label: '拉链',
-                value: '1',
-              },
-              {
-                label: '其他',
-                value: '2',
-              },
-            ],
-          },
-          {
-            type: 'checkbox',
-            label: '轮子种类',
-            value: 'wheel_type',
-            children: [{
-                label: '万向轮',
-                value: '0',
-              },
-              {
-                label: '单向轮',
-                value: '1',
-              },
-              {
-                label: '飞机轮',
-                value: '2',
-              },
-              {
-                label: '其他',
-                value: '3',
-              },
-            ],
-          },
-          {
-            type: 'checkbox',
-            label: '箱包硬度',
-            value: 'wheel_type',
-            children: [{
-                label: '硬箱',
-                value: '0',
-              },
-              {
-                label: '软硬结合',
-                value: '1',
-              },
-              {
-                label: '软箱',
-                value: '2',
-              },
-              {
-                label: '其他',
-                value: '3',
-              },
-            ],
-          },
-          {
-            type: 'checkbox',
-            label: '适用场景',
-            value: 'wheel_type',
-            children: [{
-                label: '旅行',
-                value: '0',
-              },
-              {
-                label: '婚庆',
-                value: '1',
-              },
-              {
-                label: '出差',
-                value: '2',
-              },
-              {
-                label: '其他',
-                value: '3',
-              },
-            ],
-          },
-        ],
-        groups: ['001', '002', '003'],
-      },
+      ],
+      groups: ['002'],
+    }
     ],
     moreList: []
   },
@@ -236,7 +51,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.getFineList()
     this.getRepos()
   },
@@ -244,55 +59,58 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
-
+  onReachBottom: function () {
+    this.setData({
+      page: this.data.page + 1
+    })
+    this.getRepos(this.data.params)
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
   getFineList(params = {}) {
     var that = this
     wx.request({
-      url: 'http://10.1.1.4:9501/ticket/getfine',
+      url: 'http://shijingzhao.gz01.bdysite.com/index/ticket/getfine',
       method: 'GET',
       header: {
         'content-type': 'application/json'
@@ -313,64 +131,33 @@ Page({
       items,
       checkedValues
     } = e.detail
-    const params = {}
-
-    console.log(checkedItems, items, checkedValues)
-
-    checkedItems.forEach((n) => {
-      if (n.checked) {
-        if (n.value === 'updated') {
-          const selected = n.children.filter((n) => n.checked).map((n) => n.value).join(' ')
-          params.sort = n.value
-          params.order = selected
-        } else if (n.value === 'stars') {
-          params.sort = n.value
-          params.order = n.sort === 1 ? 'asc' : 'desc'
-        } else if (n.value === 'forks') {
-          params.sort = n.value
-        } else if (n.value === 'filter') {
-          n.children.filter((n) => n.selected).forEach((n) => {
-            if (n.value === 'language') {
-              const selected = n.children.filter((n) => n.checked).map((n) => n.value).join(' ')
-              params.language = selected
-            } else if (n.value === 'query') {
-              const selected = n.children.filter((n) => n.checked).map((n) => n.value).join(' ')
-              params.query = selected
-            }
-          })
-        }
-      }
+    this.setData({
+      params: checkedValues
     })
-
-    console.log('params', params)
-
-    this.getRepos(params)
+    this.getRepos(checkedValues)
   },
   getRepos(params = {}) {
-    const language = params.language || 'javascript'
-    const query = params.query || 'react'
-    const q = `${query}+language:${language}`
-    const data = Object.assign({
-      q,
-      order: 'desc',
-    }, params)
+    if (this.data.page > this.data.maxPage) {
+      console.log('页尾')
+      return ;
+    }
+    const tType = params[0] || 0
+    const period = params[1] || 0
+    let q = "?page=" + this.data.page + "&tType=" + tType + "&period=" + period
 
-    // wx.showLoading()
-    // wx.request({
-    //     url: `https://api.github.com/search/repositories`,
-    //     data,
-    //     success: (res) => {
-    //         console.log(res)
-
-    //         wx.hideLoading()
-
-    //         this.setData({
-    //             repos: res.data.items.map((n) => Object.assign({}, n, {
-    //                 date: n.created_at.substr(0, 7),
-    //             })),
-    //         })
-    //     },
-    // })
+    wx.showLoading()
+    wx.request({
+      url: `http://shijingzhao.gz01.bdysite.com/index/ticket/filterlist` + q,
+      success: (res) => {
+        wx.hideLoading()
+        if (res.data.result.list) {
+          this.setData({
+            moreList: this.data.moreList.concat(res.data.result.list),
+            maxPage: Math.ceil(res.data.result.total / 10)
+          })
+        }
+      },
+    })
   },
   onOpen(e) {
     this.setData({
@@ -385,9 +172,9 @@ Page({
   /**
    * 阻止触摸移动
    */
-  noop() {},
+  noop() { },
 
-  detail: function(event) {
+  detail: function (event) {
     console.log(event.currentTarget.dataset)
   }
 })

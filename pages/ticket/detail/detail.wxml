@@ -49,14 +49,15 @@
   <view class='cu-tabbar-height'></view>
 </view>
 
-<view class="cu-bar bg-white tabbar border shop foot">
-  <view class="action">
-    <view class="cuIcon-shop" style="margin:0"></view>
-  </view>
-  <view class="btn-group">
-    <button class="cu-btn bg-red round" style="width:85%" bindtap="showModal" data-target="ChooseModal">立即订购</button>
-  </view>
-</view>
+<!-- <view class="cu-bar bg-white tabbar border shop foot"> -->
+  <!-- <view class="action"> -->
+    <!-- <view class="cuIcon-shop" style="margin:0"></view> -->
+  <!-- </view> -->
+  <!-- <view class="btn-group"> -->
+    <!-- <button class="cu-btn bg-red round" style="width:85%" bindtap="showModal">立即订购</button> -->
+    <!-- <button class="cu-btn bg-red round" style="width:85%" bindtap="showModal" data-target="ChooseModal">立即订购</button> -->
+  <!-- </view> -->
+<!-- </view> -->
 
 <view class="cu-modal bottom-modal {{modalName=='ChooseModal'?'show':''}}" bindtap="hideModal">
   <view class="cu-dialog" catchtap>

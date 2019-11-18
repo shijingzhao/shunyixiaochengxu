@@ -15,7 +15,7 @@
 <view class="weui-panel weui-panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
   <view class="cu-list menu-avatar">
     <view class="bg-white">
-        <navigator url="/pages/ticket/detail/detail?tId={{item.tId}}" class="flex align-start" wx:for="{{fineList}}" wx:key="" bindtap="detail" data-tId="{{item.tId}}">
+        <navigator url="/pages/ticket/detail/detail?tId={{item.tId}}" class="flex align-start" wx:for="{{moreList}}" wx:key="" bindtap="detail" data-tId="{{item.tId}}">
           <view class="bg-grey margin-xs radius item-img">
             <image mode="widthFix" src="{{item.cover}}"></image>
           </view>

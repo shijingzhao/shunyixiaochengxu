@@ -1,2 +1,5 @@
 <!--pages/home/index/index.wxml-->
-<text>pages/home/index/index.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isLeft="true">
+  <view slot="backText">顺义</view>
+</cu-custom>
+<text>敬请期待</text>
